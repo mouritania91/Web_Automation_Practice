@@ -1,4 +1,4 @@
-package locatorExamples;
+package CommandsExample;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeSuite;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class BrowserDriverSetup {
+public class BrowserDriverSetupForC {
 	
 	WebDriver driver;
 	
