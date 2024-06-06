@@ -1,4 +1,4 @@
-package mouri.project.com;
+package locatorExamples;
 
 import java.util.Scanner;
 
@@ -11,42 +11,47 @@ import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseDriver {
+
+public class BrowserDriverSetup {
 	
-public static WebDriver driver;
+	WebDriver driver;
 	
 	@BeforeSuite
-	public void startBrowser() {
+	public void browser() {
+		String browser ;
 		
-Scanner scn = new Scanner(System.in);
-		
-		String browser_name ;
+		/*Scanner scn = new Scanner(System.in);
 		
 		System.out.println("Enter browser Name:");
 		
-		browser_name = scn.nextLine();
+		browser = scn.nextLine();*/
 		
-		//String browser_name = "chrome";
-		//String browser_name = System.getProperty("browser","chrome");
+		browser = System.getProperty("browser","firefox");
 		
-		if(browser_name.equals("chrome")) {
+		if (browser.equals("chrome")) {
+			
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-		}else if(browser_name.equals("firefox")) {
+			
+		}
+		else if(browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-		}else {
+		}
+		else {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			driver.manage().window().maximize();
 		}
+		
 	}
 	
 	@AfterSuite
-	public void closeBrowser() {
+	public void close() {
 		driver.close();
 	}
+
 	
 }
