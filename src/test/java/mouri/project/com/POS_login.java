@@ -25,14 +25,12 @@ public class POS_login extends BaseDriver{
 		WebElement password = driver.findElement(By.id(":r1:"));
 		password.sendKeys("Java@2024");
 		
-		WebElement loginButton = driver.findElement(By.linkText("Login"));
+		WebElement loginButton = driver.findElement(By.xpath("//span[contains(text(),'Login')]"));
 		loginButton.click();
+		
+		
 		
 		Thread.sleep(5000);
 	}
-
-	
-	
-	
 
 }

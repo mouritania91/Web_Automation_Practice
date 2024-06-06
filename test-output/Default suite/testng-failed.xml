@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="locatorExamples.LocatorByTagName">
+      <class name="mouri.project.com.POS_login">
         <methods>
-          <include name="tagName"/>
-          <include name="open"/>
-          <include name="browser"/>
-          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="browserOpen"/>
+          <include name="closeBrowser"/>
+          <include name="locateByemail"/>
         </methods>
-      </class> <!-- locatorExamples.LocatorByTagName -->
+      </class> <!-- mouri.project.com.POS_login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
